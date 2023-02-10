@@ -16,7 +16,7 @@ const RangeSlider = ({initialMin, initialMax, min, max, step, priceCap}: RangeSl
     const [minValue, setMinValue] = useState(initialMin)
     const [maxValue, setMaxValue] = useState(initialMax)
 
-    const handleMin = (e:any) => {
+    const handleMin = (e: React.ChangeEvent<HTMLInputElement>) => {
         if ((maxValue - minValue >= priceCap) && maxValue <= max) {
             if (parseInt(e.target.value) > maxValue) {
 
@@ -30,7 +30,7 @@ const RangeSlider = ({initialMin, initialMax, min, max, step, priceCap}: RangeSl
         }
     }
 
-    const handleMax = (e:any) => {
+    const handleMax = (e: React.ChangeEvent<HTMLInputElement>):void => {
         if ((maxValue - minValue) >= priceCap && maxValue <= max) {
             if (parseInt(e.target.value) < minValue) {
 
